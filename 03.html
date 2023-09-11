@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter password</h1>
+    <input  type='password' id="pw"  value="">
+    <input type="checkbox" onclick="showpw()">Show Password
+    <button id="myBtn" onclick="CheckPassword(pw)">Enter</button>
+    <script>
+        //password detector
+        function CheckPassword(input) { 
+            var passw=  12345678;
+            var cclol= 'cancel';
+            if(input.value.match(passw)) 
+            { 
+                alert('Welcome')
+                return true;
+            }
+            else if (input.value.match(cclol))
+            {
+                alert('canceled')
+                return false;
+            }
+            else
+            {
+                alert('Wrong password')
+                return false;
+            }
+        }
+        
+        //hide password
+        function showpw() {
+            var x = document.getElementById("pw");
+            if (x.type === "passw") {
+                x.type = "text";
+            } else {
+                x.type = "passw";
+            }
+        }
+    </script>
+</body>
+</html>
